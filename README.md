@@ -1,3 +1,24 @@
+
+# Custom Build
+
+Reference: [Github Commit](https://github.com/fails-components/mediapipe/commit/8ae1c1b05966196bdbea4fd36869e54e8bdd2171)
+
+## Install Bazel
+
+Install `bazelisk` CLI globally
+
+```sh
+npm i -g @bazel/bazelisk
+```
+
+## Build vision tasks\[web\]
+
+In root directory, run the build command
+
+```sh
+bazelisk build //mediapipe/tasks/web/vision:*
+```
+
 ---
 layout: forward
 target: https://developers.google.com/mediapipe

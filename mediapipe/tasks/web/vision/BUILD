@@ -82,6 +82,39 @@ rollup_bundle(
     ],
 )
 
+rollup_bundle(
+    name = "vision_bundle_umd",
+    config_file = "//mediapipe/tasks/web:rollup.config.mjs",
+    entry_point = "index.ts",
+    format = "umd",
+    output_dir = False,
+    sourcemap = "true",
+    deps = [
+        ":vision_lib",
+        "@npm//@rollup/plugin-commonjs",
+        "@npm//@rollup/plugin-node-resolve",
+        "@npm//@rollup/plugin-terser",
+        "@npm//google-protobuf",
+    ],
+)
+
+
+rollup_bundle(
+    name = "vision_bundle",
+    config_file = "//mediapipe/tasks/web:rollup.config.mjs",
+    entry_point = "index.ts",
+    format = "iife",
+    output_dir = False,
+    sourcemap = "true",
+    deps = [
+        ":vision_lib",
+        "@npm//@rollup/plugin-commonjs",
+        "@npm//@rollup/plugin-node-resolve",
+        "@npm//@rollup/plugin-terser",
+        "@npm//google-protobuf",
+    ],
+)
+
 genrule(
     name = "vision_sources",
     srcs = [
